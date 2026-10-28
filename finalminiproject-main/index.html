@@ -1,0 +1,1426 @@
+     <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Decentralized Emergency Orchestration System - Local-first, offline-capable mesh protocol for rural healthcare, AI-Edge Triage Engine, Dynamic Multi-Modal Routing, and Break-Glass Interoperability Layer">
+  <title>Decentralized Emergency Orchestration | Rural Healthcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2" />
+            <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="url(#logoGrad)" stroke-width="2" fill="none"
+              stroke-linecap="round" />
+            <circle cx="8" cy="16" r="2" fill="#ff9bc5" />
+            <circle cx="24" cy="16" r="2" fill="#d946a6" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ff9bc5" />
+                <stop offset="100%" stop-color="#d946a6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Emergency<span class="logo-accent">Med</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#pipeline" class="nav-link">Pipeline</a></li>
+        <li><a href="#models" class="nav-link">Models</a></li>
+        <li><a href="#demo" class="nav-link">Demo</a></li>
+        <li><a href="#results" class="nav-link">Results</a></li>
+        <li><a href="#doctors" class="nav-link">Doctors</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+      <a href="login.html" class="nav-cta nav-login">Login</a>
+      <button class="nav-cta" id="analyzeBtn" onclick="scrollToDemo()">Analyze Image</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#pipeline" onclick="toggleMenu()">Pipeline</a></li>
+      <li><a href="#models" onclick="toggleMenu()">Models</a></li>
+      <li><a href="#demo" onclick="toggleMenu()">Demo</a></li>
+      <li><a href="#results" onclick="toggleMenu()">Results</a></li>
+      <li><a href="#doctors" onclick="toggleMenu()">Doctors</a></li>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Emergency Cancer Detection System
+      </div>
+      <h1 class="hero-title">
+        Emergency <span class="gradient-text">Cancer Detection</span><br>
+        with Hospital Alerts
+      </h1>
+      <p class="hero-subtitle">
+        Advanced AI system combining cancer detection with real-time hospital alerts,
+        doctor notifications, and patient emergency coordination for <strong>faster diagnosis</strong> and <strong>immediate treatment</strong>.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="85">0%</div>
+          <div class="stat-label">Faster Response</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="95">0%</div>
+          <div class="stat-label">Triage Accuracy</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="40">0%</div>
+          <div class="stat-label">Rural Coverage</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="24">0</div>
+          <div class="stat-label">Hour Coverage</div>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToDemo()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          Try Live Demo
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('pipeline').scrollIntoView({behavior:'smooth'})">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
+          </svg>
+          View Pipeline
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="quantum-sphere">
+        <div class="sphere-ring ring1"></div>
+        <div class="sphere-ring ring2"></div>
+        <div class="sphere-ring ring3"></div>
+        <div class="sphere-core">
+          <div class="core-pulse"></div>
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="20" stroke="url(#sphereGrad)" stroke-width="1.5" stroke-dasharray="4 2" />
+            <circle cx="30" cy="30" r="10" fill="url(#sphereGrad)" opacity="0.8" />
+            <path d="M15 30 Q22 15 30 30 Q38 45 45 30" stroke="#ff9bc5" stroke-width="1.5" fill="none" />
+            <defs>
+              <linearGradient id="sphereGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ff9bc5" />
+                <stop offset="100%" stop-color="#d946a6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="orbit-dot dot1"></div>
+        <div class="orbit-dot dot2"></div>
+        <div class="orbit-dot dot3"></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll to Explore</span>
+    </div>
+  </section>
+
+  <!-- Pipeline Section -->
+  <section class="pipeline-section" id="pipeline">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Architecture</div>
+        <h2 class="section-title">Complete Detection <span class="gradient-text">Pipeline</span></h2>
+        <p class="section-subtitle">Seven-stage hybrid pipeline integrating classical deep learning with quantum
+          computing for maximum diagnostic precision.</p>
+      </div>
+
+      <div class="pipeline-flow">
+        <!-- Stage 1 -->
+        <div class="pipeline-stage" data-stage="1">
+          <div class="stage-connector top-conn"></div>
+          <div class="stage-card">
+            <div class="stage-icon classical">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <div class="stage-badge classical-badge">INPUT</div>
+            <h3>Medical Images</h3>
+            <p>DICOM, histopathology slides, and mammography scans are ingested into the system pipeline.</p>
+            <div class="stage-tags">
+              <span>DICOM</span><span>BreakHis</span><span>CBIS-DDSM</span>
+            </div>
+          </div>
+          <div class="stage-connector bot-conn"></div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="pipeline-stage" data-stage="2">
+          <div class="stage-card">
+            <div class="stage-icon classical">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div class="stage-badge classical-badge">CLASSICAL</div>
+            <h3>Preprocessing</h3>
+            <p>Normalization, noise removal (Gaussian/Bilateral filters), ROI extraction, patch generation, and data
+              augmentation.</p>
+            <div class="stage-tags">
+              <span>Min-Max Scaling</span><span>Gaussian Filter</span><span>ROI Crop</span>
+            </div>
+          </div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad2)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad2" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="pipeline-stage" data-stage="3">
+          <div class="stage-card featured">
+            <div class="stage-icon classical">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <path d="M9 9h6M9 12h6M9 15h4" />
+              </svg>
+            </div>
+            <div class="stage-badge cnn-badge">CNN</div>
+            <h3>CNN Feature Extraction</h3>
+            <p>Deep convolutional layers extract hierarchical image features using pretrained ResNet50, VGG16, or
+              InceptionV3 backbones.</p>
+            <div class="stage-tags">
+              <span>ResNet50</span><span>VGG16</span><span>Transfer Learning</span>
+            </div>
+          </div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad3)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad3" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="pipeline-stage" data-stage="4">
+          <div class="stage-card">
+            <div class="stage-icon quantum">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M12 3v18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
+              </svg>
+            </div>
+            <div class="stage-badge pca-badge">DIM REDUCTION</div>
+            <h3>PCA / Feature Reduction</h3>
+            <p>Principal Component Analysis compresses high-dimensional CNN features to 8-16 components, matching
+              quantum circuit qubit count.</p>
+            <div class="stage-tags">
+              <span>PCA</span><span>95% Variance</span><span>8 Components</span>
+            </div>
+          </div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad4)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad4" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="pipeline-stage" data-stage="5">
+          <div class="stage-card featured">
+            <div class="stage-icon quantum">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2C6.5 17 6.5 7 12 22M12 2C17.5 17 17.5 7 12 22" />
+              </svg>
+            </div>
+            <div class="stage-badge quantum-badge">QUANTUM</div>
+            <h3>Quantum Encoding</h3>
+            <p>Features encoded as quantum states using Angle Encoding (RY gates) or Amplitude Encoding, preparing data
+              for quantum circuits.</p>
+            <div class="stage-tags">
+              <span>Angle Encoding</span><span>Amplitude Enc.</span><span>ZZFeatureMap</span>
+            </div>
+          </div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad5)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad5" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 6 -->
+        <div class="pipeline-stage" data-stage="6">
+          <div class="stage-card">
+            <div class="stage-icon quantum">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+              </svg>
+            </div>
+            <div class="stage-badge quantum-badge">QUANTUM ML</div>
+            <h3>QSVM / VQC</h3>
+            <p>Quantum Support Vector Machine and Variational Quantum Classifier use quantum kernels and parameterized
+              circuits for classification.</p>
+            <div class="stage-tags">
+              <span>QSVM</span><span>VQC</span><span>COBYLA</span><span>SPSA</span>
+            </div>
+          </div>
+          <div class="stage-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad6)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad6" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stage 7 -->
+        <div class="pipeline-stage" data-stage="7">
+          <div class="stage-card">
+            <div class="stage-icon hybrid">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 6H5a2 2 0 00-2 2v8a2 2 0 002 2h3M16 6h3a2 2 0 012 2v8a2 2 0 01-2 2h-3M8 12h8" />
+              </svg>
+            </div>
+            <div class="stage-badge hybrid-badge">FUSION</div>
+            <h3>Hybrid Fusion</h3>
+            <p>Late/Feature/Learned fusion layers combine CNN and quantum model predictions using weighted averaging,
+              voting, or neural fusion.</p>
+            <div class="stage-tags">
+              <span>Late Fusion</span><span>Feature Fusion</span><span>Learned Fusion</span>
+            </div>
+          </div>
+          <div class="stage-arrow final-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="url(#arrGrad7)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="arrGrad7" x1="12" y1="5" x2="12" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="pipeline-output">
+          <div class="output-benign">
+            <div class="output-icon">✓</div>
+            <div>
+              <div class="output-label">Benign</div>
+              <div class="output-sub">Non-cancerous</div>
+            </div>
+          </div>
+          <div class="output-divider">OR</div>
+          <div class="output-malignant">
+            <div class="output-icon">⚠</div>
+            <div>
+              <div class="output-label">Malignant</div>
+              <div class="output-sub">Cancerous</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Section -->
+  <section class="models-section" id="models">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Technology</div>
+        <h2 class="section-title">Integrated <span class="gradient-text">ML Models</span></h2>
+        <p class="section-subtitle">Four specialized models working in concert — from classical deep learning to
+          cutting-edge quantum computing.</p>
+      </div>
+      <div class="models-grid">
+
+        <!-- CNN Card -->
+        <div class="model-card cnn-card" id="cnn-model-card">
+          <div class="model-glow"></div>
+          <div class="model-header">
+            <div class="model-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="6" height="6" rx="1" />
+                <rect x="9" y="3" width="6" height="6" rx="1" />
+                <rect x="15" y="3" width="6" height="6" rx="1" />
+                <rect x="3" y="9" width="6" height="6" rx="1" />
+                <rect x="9" y="9" width="6" height="6" rx="1" />
+                <rect x="15" y="9" width="6" height="6" rx="1" />
+                <rect x="3" y="15" width="6" height="6" rx="1" />
+                <rect x="9" y="15" width="6" height="6" rx="1" />
+                <rect x="15" y="15" width="6" height="6" rx="1" />
+              </svg>
+            </div>
+            <div class="model-type-badge classical-b">Classical CNN</div>
+          </div>
+          <h3 class="model-name">Convolutional Neural Network</h3>
+          <p class="model-desc">ResNet50/VGG16 pretrained backbone extracts rich hierarchical features from medical
+            images through multiple convolutional layers.</p>
+          <div class="model-metrics">
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 97%"></div>
+              </div>
+              <span>Accuracy: 97%</span>
+            </div>
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 96%"></div>
+              </div>
+              <span>AUC-ROC: 0.96</span>
+            </div>
+          </div>
+          <div class="model-specs">
+            <div class="spec"><span class="spec-key">Architecture</span><span class="spec-val">ResNet50</span></div>
+            <div class="spec"><span class="spec-key">Input Size</span><span class="spec-val">224×224</span></div>
+            <div class="spec"><span class="spec-key">Features</span><span class="spec-val">2048-dim</span></div>
+            <div class="spec"><span class="spec-key">Training</span><span class="spec-val">Transfer Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VQC Card -->
+        <div class="model-card vqc-card" id="vqc-model-card">
+          <div class="model-glow"></div>
+          <div class="model-header">
+            <div class="model-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" />
+              </svg>
+            </div>
+            <div class="model-type-badge quantum-b">Quantum</div>
+          </div>
+          <h3 class="model-name">Variational Quantum Classifier</h3>
+          <p class="model-desc">Parameterized quantum circuits with ZZFeatureMap ansatz, optimized via COBYLA/SPSA to
+            find quantum advantage in feature space.</p>
+          <div class="model-metrics">
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 93%"></div>
+              </div>
+              <span>Accuracy: 93%</span>
+            </div>
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 92%"></div>
+              </div>
+              <span>AUC-ROC: 0.92</span>
+            </div>
+          </div>
+          <div class="model-specs">
+            <div class="spec"><span class="spec-key">Qubits</span><span class="spec-val">8</span></div>
+            <div class="spec"><span class="spec-key">Circuit Depth</span><span class="spec-val">3 layers</span></div>
+            <div class="spec"><span class="spec-key">Optimizer</span><span class="spec-val">COBYLA</span></div>
+            <div class="spec"><span class="spec-key">Backend</span><span class="spec-val">Qiskit Sim</span></div>
+          </div>
+        </div>
+
+        <!-- QSVM Card -->
+        <div class="model-card qsvm-card" id="qsvm-model-card">
+          <div class="model-glow"></div>
+          <div class="model-header">
+            <div class="model-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l10 10-10 10L2 12z" />
+                <path d="M12 6v12M6 12h12" />
+              </svg>
+            </div>
+            <div class="model-type-badge quantum-b">Quantum SVM</div>
+          </div>
+          <h3 class="model-name">Quantum Support Vector Machine</h3>
+          <p class="model-desc">Quantum kernel-based SVM using ZZFeatureMap and PauliFeatureMap to compute kernel
+            matrices in Hilbert space.</p>
+          <div class="model-metrics">
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 91%"></div>
+              </div>
+              <span>Accuracy: 91%</span>
+            </div>
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill" style="--fill: 90%"></div>
+              </div>
+              <span>AUC-ROC: 0.90</span>
+            </div>
+          </div>
+          <div class="model-specs">
+            <div class="spec"><span class="spec-key">Kernel</span><span class="spec-val">ZZFeatureMap</span></div>
+            <div class="spec"><span class="spec-key">Feature Map</span><span class="spec-val">Pauli</span></div>
+            <div class="spec"><span class="spec-key">Qubits</span><span class="spec-val">8</span></div>
+            <div class="spec"><span class="spec-key">Backend</span><span class="spec-val">Qiskit Sim</span></div>
+          </div>
+        </div>
+
+        <!-- Hybrid Fusion Card -->
+        <div class="model-card hybrid-card" id="hybrid-model-card">
+          <div class="model-glow hybrid-glow"></div>
+          <div class="model-header">
+            <div class="model-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+            </div>
+            <div class="model-type-badge hybrid-b">Hybrid Fusion</div>
+          </div>
+          <h3 class="model-name">Hybrid Classical-Quantum System</h3>
+          <p class="model-desc">Best-in-class fusion combining CNN features with quantum predictions using learned
+            neural fusion for maximum diagnostic accuracy.</p>
+          <div class="model-metrics">
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill best" style="--fill: 98%"></div>
+              </div>
+              <span>Accuracy: 97.8%</span>
+            </div>
+            <div class="metric">
+              <div class="metric-bar">
+                <div class="metric-fill best" style="--fill: 98%"></div>
+              </div>
+              <span>AUC-ROC: 0.98</span>
+            </div>
+          </div>
+          <div class="model-specs">
+            <div class="spec"><span class="spec-key">Fusion Type</span><span class="spec-val">Late + Learned</span>
+            </div>
+            <div class="spec"><span class="spec-key">Models</span><span class="spec-val">CNN + VQC + QSVM</span></div>
+            <div class="spec"><span class="spec-key">F1-Score</span><span class="spec-val">0.978</span></div>
+            <div class="spec"><span class="spec-key">Precision</span><span class="spec-val">97.5%</span></div>
+          </div>
+          <div class="best-badge">⭐ Best Performer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo-section" id="demo">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Interactive</div>
+        <h2 class="section-title">Live <span class="gradient-text">Analysis Demo</span></h2>
+        <p class="section-subtitle">Upload a medical image or use our sample dataset. Watch the hybrid AI pipeline
+          analyze it in real-time.</p>
+      </div>
+
+      <div class="demo-layout">
+        <!-- Input Panel -->
+        <div class="demo-input">
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()"
+            ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+            <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFileSelect(event)">
+            <div class="upload-icon" id="uploadIcon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+              </svg>
+            </div>
+            <div class="upload-content" id="uploadContent">
+              <h4>Drop Medical Image Here</h4>
+              <p>or click to browse files</p>
+              <div class="upload-formats">Supports: JPG, PNG, DICOM, TIFF</div>
+            </div>
+            <img id="previewImage" class="preview-image" style="display:none" alt="Preview">
+            <div id="imageCaptionWrapper" style="display:none; text-align:center; margin-top:12px;">
+              <p id="imageCaption" style="font-size:0.9rem; font-weight:600; color:#ef4444; margin:0; padding:8px 12px; background:rgba(239,68,68,0.1); border-radius:6px; border-left:3px solid #ef4444;"></p>
+            </div>
+          </div>
+
+          <div class="sample-images">
+            <h4>Sample Images</h4>
+            <div class="sample-grid">
+              <button class="sample-btn" id="sample1" onclick="loadSample(1)">
+                <div class="sample-thumb benign-thumb">B</div>
+                <span>Sample 1 – Benign</span>
+              </button>
+              <button class="sample-btn" id="sample2" onclick="loadSample(2)">
+                <div class="sample-thumb malignant-thumb">M</div>
+                <span>Sample 2 – Malignant</span>
+              </button>
+              <button class="sample-btn" id="sample3" onclick="loadSample(3)">
+                <div class="sample-thumb benign-thumb">B</div>
+                <span>Sample 3 – Benign</span>
+              </button>
+              <button class="sample-btn" id="sample4" onclick="loadSample(4)">
+                <div class="sample-thumb malignant-thumb">M</div>
+                <span>Sample 4 – Malignant</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="model-selector">
+            <h4>Select Model</h4>
+            <div class="model-options">
+              <label class="model-option">
+                <input type="radio" name="model" value="hybrid" id="hybridOpt" checked>
+                <div class="option-card">
+                  <div class="option-icon hybrid-opt">⚛</div>
+                  <span>Hybrid Fusion</span>
+                  <div class="option-acc">97.8%</div>
+                </div>
+              </label>
+              <label class="model-option">
+                <input type="radio" name="model" value="cnn" id="cnnOpt">
+                <div class="option-card">
+                  <div class="option-icon cnn-opt">🧠</div>
+                  <span>CNN Only</span>
+                  <div class="option-acc">97%</div>
+                </div>
+              </label>
+              <label class="model-option">
+                <input type="radio" name="model" value="vqc" id="vqcOpt">
+                <div class="option-card">
+                  <div class="option-icon quantum-opt">🔬</div>
+                  <span>VQC</span>
+                  <div class="option-acc">93%</div>
+                </div>
+              </label>
+              <label class="model-option">
+                <input type="radio" name="model" value="qsvm" id="qsvmOpt">
+                <div class="option-card">
+                  <div class="option-icon quantum-opt">⚡</div>
+                  <span>QSVM</span>
+                  <div class="option-acc">91%</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button class="analyze-btn" id="analyzeButton" onclick="runAnalysis()">
+            <span class="btn-text">Analyze Image</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="demo-output" id="demoOutput">
+          <div class="output-placeholder" id="outputPlaceholder">
+            <div class="placeholder-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+            <h4>Awaiting Analysis</h4>
+            <p>Upload an image and click "Analyze Image" to see the results from the hybrid quantum-classical pipeline.
+            </p>
+          </div>
+
+          <div class="analysis-results" id="analysisResults" style="display:none">
+            <!-- Pipeline Progress -->
+            <div class="pipeline-progress" id="pipelineProgress">
+              <h4>Pipeline Execution</h4>
+              <div class="progress-steps">
+                <div class="progress-step" id="step1">
+                  <div class="step-icon">1</div>
+                  <div class="step-info">
+                    <span class="step-name">Image Preprocessing</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="progress-step" id="step2">
+                  <div class="step-icon">2</div>
+                  <div class="step-info">
+                    <span class="step-name">CNN Feature Extraction</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="progress-step" id="step3">
+                  <div class="step-icon">3</div>
+                  <div class="step-info">
+                    <span class="step-name">PCA Reduction (2048 → 8)</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="progress-step" id="step4">
+                  <div class="step-icon">4</div>
+                  <div class="step-info">
+                    <span class="step-name">Quantum Encoding</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="progress-step" id="step5">
+                  <div class="step-icon">5</div>
+                  <div class="step-info">
+                    <span class="step-name">QSVM / VQC Classification</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="progress-step" id="step6">
+                  <div class="step-icon">6</div>
+                  <div class="step-info">
+                    <span class="step-name">Hybrid Fusion</span>
+                    <div class="step-bar">
+                      <div class="step-fill"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="result-display" id="resultDisplay" style="display:none">
+              <div class="result-icon-wrapper" id="resultIconWrapper">
+                <div class="result-pulse"></div>
+                <div class="result-icon" id="resultIcon"></div>
+              </div>
+              <div class="result-label" id="resultLabel"></div>
+              <div class="confidence-display">
+                <div class="confidence-label">Confidence Score</div>
+                <div class="confidence-bar-wrapper">
+                  <div class="confidence-bar" id="confidenceBar"></div>
+                </div>
+                <div class="confidence-value" id="confidenceValue"></div>
+              </div>
+
+              <div class="model-breakdown">
+                <h5>Model Breakdown</h5>
+                <div class="breakdown-grid" id="breakdownGrid"></div>
+              </div>
+
+              <div class="feature-analysis">
+                <h5>Feature Importance</h5>
+                <div class="feature-bars" id="featureBars"></div>
+              </div>
+
+              <button class="reset-btn" onclick="resetDemo()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                Analyze Another
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section" id="results">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Performance</div>
+        <h2 class="section-title">Benchmark <span class="gradient-text">Results</span></h2>
+        <p class="section-subtitle">Comprehensive evaluation across accuracy, precision, recall, and AUC-ROC metrics on
+          the WDBC dataset.</p>
+      </div>
+
+      <div class="results-content">
+        <!-- Comparison Chart -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>Model Performance Comparison</h3>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot classical-dot"></span>Classical</span>
+              <span class="legend-item"><span class="legend-dot quantum-dot"></span>Quantum</span>
+              <span class="legend-item"><span class="legend-dot hybrid-dot"></span>Hybrid</span>
+            </div>
+          </div>
+          <div class="chart-tabs">
+            <button class="chart-tab active" onclick="switchMetric('accuracy', this)">Accuracy</button>
+            <button class="chart-tab" onclick="switchMetric('precision', this)">Precision</button>
+            <button class="chart-tab" onclick="switchMetric('recall', this)">Recall</button>
+            <button class="chart-tab" onclick="switchMetric('f1', this)">F1-Score</button>
+            <button class="chart-tab" onclick="switchMetric('auc', this)">AUC-ROC</button>
+          </div>
+          <div class="bar-chart" id="barChart">
+            <!-- Bars populated by JS -->
+          </div>
+        </div>
+
+        <!-- Metrics Table -->
+        <div class="metrics-table-container">
+          <h3>Detailed Metrics</h3>
+          <div class="metrics-table">
+            <div class="table-header">
+              <div>Model</div>
+              <div>Accuracy</div>
+              <div>Precision</div>
+              <div>Recall</div>
+              <div>F1</div>
+              <div>AUC-ROC</div>
+            </div>
+            <div class="table-row">
+              <div class="model-cell"><span class="dot classical-dot"></span>Classical SVM</div>
+              <div>96.5%</div>
+              <div>95.8%</div>
+              <div>96.2%</div>
+              <div>0.960</div>
+              <div>0.958</div>
+            </div>
+            <div class="table-row">
+              <div class="model-cell"><span class="dot classical-dot"></span>Random Forest</div>
+              <div>95.6%</div>
+              <div>94.9%</div>
+              <div>95.3%</div>
+              <div>0.951</div>
+              <div>0.953</div>
+            </div>
+            <div class="table-row">
+              <div class="model-cell"><span class="dot classical-dot"></span>CNN (ResNet50)</div>
+              <div>97.0%</div>
+              <div>96.8%</div>
+              <div>97.1%</div>
+              <div>0.969</div>
+              <div>0.970</div>
+            </div>
+            <div class="table-row">
+              <div class="model-cell"><span class="dot quantum-dot"></span>VQC</div>
+              <div>92.8%</div>
+              <div>92.1%</div>
+              <div>93.0%</div>
+              <div>0.925</div>
+              <div>0.921</div>
+            </div>
+            <div class="table-row">
+              <div class="model-cell"><span class="dot quantum-dot"></span>QSVM</div>
+              <div>91.4%</div>
+              <div>90.8%</div>
+              <div>91.7%</div>
+              <div>0.912</div>
+              <div>0.907</div>
+            </div>
+            <div class="table-row best-row">
+              <div class="model-cell"><span class="dot hybrid-dot"></span>Hybrid Fusion ⭐</div>
+              <div>97.8%</div>
+              <div>97.5%</div>
+              <div>97.9%</div>
+              <div>0.978</div>
+              <div>0.979</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantum Circuit Visualization -->
+        <div class="quantum-circuit-card">
+          <div class="circuit-header">
+            <h3>Quantum Circuit Visualization</h3>
+            <div class="circuit-info">ZZFeatureMap + RealAmplitudes Ansatz (8 qubits)</div>
+          </div>
+          <div class="circuit-diagram" id="circuitDiagram">
+            <!-- Animated quantum circuit -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-badge">About</div>
+          <h2 class="section-title">The <span class="gradient-text">Science</span> Behind the System</h2>
+          <p>QuantumMed represents the convergence of two powerful paradigms — classical deep learning and quantum
+            computing — to push the boundaries of medical diagnostics.</p>
+          <p>Traditional CNNs excel at identifying patterns in images, but quantum algorithms can explore a vastly
+            larger feature space simultaneously through superposition and entanglement. Our hybrid approach harnesses
+            both.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="feature-icon">⚛️</div>
+              <div>
+                <h4>Quantum Advantage</h4>
+                <p>Exponentially large Hilbert space exploration via quantum superposition and entanglement gates</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">🧠</div>
+              <div>
+                <h4>Deep Feature Learning</h4>
+                <p>Pre-trained CNNs extract 2048-dimensional feature vectors capturing intricate tissue morphology</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">🔀</div>
+              <div>
+                <h4>Intelligent Fusion</h4>
+                <p>Neural fusion layers learn optimal combination weights, surpassing any individual model's performance
+                </p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">📊</div>
+              <div>
+                <h4>Clinical Validation</h4>
+                <p>Validated on WDBC, BreakHis, and CBIS-DDSM benchmark datasets with rigorous cross-validation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="tech-stack">
+            <h4>Technology Stack</h4>
+            <div class="tech-items">
+              <div class="tech-item">
+                <div class="tech-icon">🐍</div>
+                <div class="tech-info">
+                  <span class="tech-name">PyTorch</span>
+                  <span class="tech-desc">CNN training & inference</span>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">⚛</div>
+                <div class="tech-info">
+                  <span class="tech-name">Qiskit</span>
+                  <span class="tech-desc">Quantum circuits & QSVM</span>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">📐</div>
+                <div class="tech-info">
+                  <span class="tech-name">scikit-learn</span>
+                  <span class="tech-desc">Classical ML & PCA</span>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🔢</div>
+                <div class="tech-info">
+                  <span class="tech-name">NumPy / Pandas</span>
+                  <span class="tech-desc">Data processing</span>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">📊</div>
+                <div class="tech-info">
+                  <span class="tech-name">Matplotlib</span>
+                  <span class="tech-desc">Visualization & results</span>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🖼️</div>
+                <div class="tech-info">
+                  <span class="tech-name">OpenCV</span>
+                  <span class="tech-desc">Medical image processing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="datasets-info">
+            <h4>Supported Datasets</h4>
+            <div class="dataset-list">
+              <div class="dataset-item"><span class="ds-badge">WDBC</span><span>Wisconsin Diagnostic (569
+                  samples)</span></div>
+              <div class="dataset-item"><span class="ds-badge">BreakHis</span><span>Histopathology (7,909 images)</span>
+              </div>
+              <div class="dataset-item"><span class="ds-badge">CBIS-DDSM</span><span>Mammography (full DDSM)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Response & Cancer Centres Section -->
+  <section class="doctor-centres-section" id="doctors">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Network</div>
+        <h2 class="section-title">Doctor Response & <span class="gradient-text">Cancer Centres</span></h2>
+        <p class="section-subtitle">Connect with doctors, respond to alerts, and find nearby specialized cancer treatment centres with real-time route mapping.</p>
+      </div>
+
+      <div class="doctors-layout">
+        <!-- Doctor Response Panel -->
+        <div class="doctor-response-panel">
+          <div class="panel-header">
+            <h3>Doctor Alerts & Response</h3>
+            <span class="alert-badge">3 New Alerts</span>
+          </div>
+          
+          <div class="doctor-alerts">
+            <div class="alert-item">
+              <div class="alert-header">
+                <span class="alert-priority high">HIGH</span>
+                <span class="alert-time">2 hours ago</span>
+              </div>
+              <div class="alert-content">
+                <h4>Urgent Analysis Required</h4>
+                <p>Patient ID: MED-2024-5421 - Malignant detection with 96.7% confidence</p>
+              </div>
+              <div class="alert-actions">
+                <button class="btn-respond" onclick="showDoctorResponse(1)">Respond</button>
+                <button class="btn-secondary-sm" onclick="markRead(1)">Mark Read</button>
+              </div>
+            </div>
+
+            <div class="alert-item">
+              <div class="alert-header">
+                <span class="alert-priority medium">MEDIUM</span>
+                <span class="alert-time">5 hours ago</span>
+              </div>
+              <div class="alert-content">
+                <h4>Verification Requested</h4>
+                <p>Patient ID: MED-2024-5419 - Benign classification needs doctor confirmation</p>
+              </div>
+              <div class="alert-actions">
+                <button class="btn-respond" onclick="showDoctorResponse(2)">Respond</button>
+                <button class="btn-secondary-sm" onclick="markRead(2)">Mark Read</button>
+              </div>
+            </div>
+
+            <div class="alert-item">
+              <div class="alert-header">
+                <span class="alert-priority medium">MEDIUM</span>
+                <span class="alert-time">1 day ago</span>
+              </div>
+              <div class="alert-content">
+                <h4>Second Opinion</h4>
+                <p>Patient ID: MED-2024-5410 - Borderline case (54% confidence)</p>
+              </div>
+              <div class="alert-actions">
+                <button class="btn-respond" onclick="showDoctorResponse(3)">Respond</button>
+                <button class="btn-secondary-sm" onclick="markRead(3)">Mark Read</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor Response Modal -->
+        <div class="response-modal" id="responseModal" style="display: none;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Doctor Response</h3>
+              <button class="close-modal" onclick="closeDoctorResponse()">×</button>
+            </div>
+            <div class="modal-body">
+              <div class="response-form">
+                <div class="form-group">
+                  <label>Your Response:</label>
+                  <div class="response-options">
+                    <label class="radio-option">
+                      <input type="radio" name="response" value="agree">
+                      <span class="radio-label">✓ I Agree with AI Diagnosis</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="response" value="disagree">
+                      <span class="radio-label">✗ I Disagree - Requires Review</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="response" value="needs-more">
+                      <span class="radio-label">? Needs More Data</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Comments:</label>
+                  <textarea placeholder="Add your medical notes..." rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>
+                    <input type="checkbox">
+                    <span>Refer patient to specialist cancer centre</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn-secondary" onclick="closeDoctorResponse()">Cancel</button>
+              <button class="btn-primary" onclick="submitResponse()">Submit Response</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nearby Cancer Centres Panel -->
+        <div class="cancer-centres-panel">
+          <div class="panel-header">
+            <h3>Nearby Cancer Treatment Centres</h3>
+            <div class="centre-filter">
+              <input type="text" id="locationInput" placeholder="Enter location or zip code..." value="Ernakulam, Kerala">
+              <button class="btn-search" onclick="searchCentres()">Search</button>
+            </div>
+          </div>
+
+          <!-- Cancer Centres List -->
+          <div class="centres-list" id="centresList">
+            <div class="centre-item">
+              <div class="centre-header">
+                <h4>Lisiee Cancer Centre</h4>
+                <span class="distance-badge">1.2 km away</span>
+              </div>
+              <div class="centre-details">
+                <p class="centre-address">📍 Kaloor, Ernakulam, Kerala</p>
+                <p class="centre-phone">📞 Contact for Details</p>
+                <div class="centre-specialties">
+                  <span class="specialty">Oncology</span>
+                  <span class="specialty">Cancer Treatment</span>
+                  <span class="specialty">Diagnostics</span>
+                </div>
+                <div class="centre-rating">⭐ 4.2/5 (17 reviews)</div>
+              </div>
+              <div class="centre-actions">
+                <button class="btn-map" onclick="showRoute('Lisiee Cancer Centre', 9.9689, 76.2938)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  View Route
+                </button>
+                <button class="btn-call" onclick="callCentre('Contact for Details')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  Call
+                </button>
+                <button class="btn-navigate" onclick="navigateTo('Lisiee Cancer Centre', 9.9689, 76.2938)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12a7 7 0 1 0-14 0 7 7 0 0 0 14 0Z" />
+                  </svg>
+                  Navigate
+                </button>
+              </div>
+            </div>
+
+            <div class="centre-item">
+              <div class="centre-header">
+                <h4>Aster Medcity</h4>
+                <span class="distance-badge">3.5 km away</span>
+              </div>
+              <div class="centre-details">
+                <p class="centre-address">📍 South Chittoor, Ernakulam, Kerala</p>
+                <p class="centre-phone">📞 Contact for Details</p>
+                <div class="centre-specialties">
+                  <span class="specialty">Multi-Specialty</span>
+                  <span class="specialty">Oncology</span>
+                  <span class="specialty">Advanced Care</span>
+                </div>
+                <div class="centre-rating">⭐ 4.6/5 (38,481 reviews)</div>
+              </div>
+              <div class="centre-actions">
+                <button class="btn-map" onclick="showRoute('Aster Medcity', 9.9456, 76.2881)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  View Route
+                </button>
+                <button class="btn-call" onclick="callCentre('Contact for Details')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  Call
+                </button>
+                <button class="btn-navigate" onclick="navigateTo('Aster Medcity', 9.9456, 76.2881)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12a7 7 0 1 0-14 0 7 7 0 0 0 14 0Z" />
+                  </svg>
+                  Navigate
+                </button>
+              </div>
+            </div>
+
+            <div class="centre-item">
+              <div class="centre-header">
+                <h4>Ernakulam Medical Center</h4>
+                <span class="distance-badge">2.1 km away</span>
+              </div>
+              <div class="centre-details">
+                <p class="centre-address">📍 Central Ernakulam, Kerala</p>
+                <p class="centre-phone">📞 Contact for Details</p>
+                <div class="centre-specialties">
+                  <span class="specialty">Oncology Services</span>
+                  <span class="specialty">Chemotherapy</span>
+                  <span class="specialty">Radiation Therapy</span>
+                </div>
+                <div class="centre-rating">⭐ 4.4/5 (892 reviews)</div>
+              </div>
+              <div class="centre-actions">
+                <button class="btn-map" onclick="showRoute('Ernakulam Medical Center', 9.9626, 76.2910)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  View Route
+                </button>
+                <button class="btn-call" onclick="callCentre('Contact for Details')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  Call
+                </button>
+                <button class="btn-navigate" onclick="navigateTo('Ernakulam Medical Center', 9.9626, 76.2910)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12a7 7 0 1 0-14 0 7 7 0 0 0 14 0Z" />
+                  </svg>
+                  Navigate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Map -->
+      <div class="route-map-container">
+        <div class="map-header">
+          <h3>Route Map to Cancer Centres</h3>
+          <p>Interactive map showing nearest cancer treatment facilities and routes</p>
+        </div>
+        <div id="routeMap" class="route-map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Alert Modal for Malignant Detection -->
+  <div class="patient-alert-modal" id="patientAlertModal" style="display: none;">
+    <div class="patient-alert-overlay"></div>
+    <div class="alert-content-wrapper">
+      <div class="alert-card">
+        <div class="alert-header critical">
+          <div class="alert-icon">⚠️</div>
+          <h2>Health Alert - Immediate Medical Attention Required</h2>
+          <button class="close-alert" onclick="closePatientAlert()">×</button>
+        </div>
+
+        <div class="alert-body">
+          <div class="status-section">
+            <h3>Your Medical Status</h3>
+            <div class="status-box malignant">
+              <div class="status-icon">⚠️</div>
+              <div class="status-text">
+                <p class="status-label">Analysis Result</p>
+                <p class="status-value" id="patientResultLabel">Malignant Tumour Detected</p>
+                <p class="status-confidence" id="patientConfidence">Confidence: 94.7%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert-message">
+            <h4>⚡ Critical Finding</h4>
+            <p>Our automated imaging analysis has <strong>detected malignant cells</strong> in your medical scan. While this is a serious finding, early detection significantly improves treatment outcomes.</p>
+            
+            <h4>📋 What This Means</h4>
+            <ul>
+              <li><strong>Immediate consultation:</strong> A specialist doctor needs to review your case urgently</li>
+              <li><strong>Treatment options:</strong> Multiple treatment pathways are available</li>
+              <li><strong>Time is important:</strong> Faster intervention leads to better results</li>
+              <li><strong>Your support:</strong> You will have a dedicated care team</li>
+            </ul>
+
+            <h4>🏥 Next Steps</h4>
+            <div class="next-steps">
+              <div class="step-item">
+                <span class="step-number">1</span>
+                <div class="step-details">
+                  <p class="step-title">Give Medical Consent</p>
+                  <p class="step-desc">Authorize our system to share findings with oncologists</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-number">2</span>
+                <div class="step-details">
+                  <p class="step-title">Schedule Consultation</p>
+                  <p class="step-desc">Book an appointment with a cancer specialist immediately</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-number">3</span>
+                <div class="step-details">
+                  <p class="step-title">Treatment Planning</p>
+                  <p class="step-desc">Develop personalized treatment strategy with your doctor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="consent-section">
+            <h4>Medical Consent & Authorization</h4>
+            <div class="consent-form">
+              <div class="consent-item">
+                <label>
+                  <input type="checkbox" id="consentSharing">
+                  <span>I consent to share my medical findings with oncologists and specialists</span>
+                </label>
+              </div>
+              <div class="consent-item">
+                <label>
+                  <input type="checkbox" id="consentCommunication">
+                  <span>I authorize urgent communication regarding my medical condition</span>
+                </label>
+              </div>
+              <div class="consent-item">
+                <label>
+                  <input type="checkbox" id="consentFollowup">
+                  <span>I agree to follow-up consultations and treatment recommendations</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="emergency-contact">
+            <h4>🚑 Emergency Support</h4>
+            <p>If you're experiencing symptoms or need immediate assistance:</p>
+            <div class="contact-buttons">
+              <button class="btn-emergency" onclick="callEmergency('108')">
+                <span>🚑 Call Emergency (108)</span>
+              </button>
+              <button class="btn-emergency alternate" onclick="window.open('tel:+919874567890')">
+                <span>📞 Call Oncology Hotline</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert-footer">
+          <button class="btn-secondary" onclick="closePatientAlert()">Not Now</button>
+          <button class="btn-primary urgent" onclick="submitPatientConsent()" id="submitConsentBtn">
+            ✓ Give Medical Consent & Schedule Consultation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="url(#footerGrad)" stroke-width="2" />
+              <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="url(#footerGrad)" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+              <circle cx="8" cy="16" r="2" fill="#ff9bc5" />
+              <circle cx="24" cy="16" r="2" fill="#d946a6" />
+              <defs>
+                <linearGradient id="footerGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff9bc5" />
+                  <stop offset="100%" stop-color="#d946a6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">Quantum<span class="logo-accent">Med</span></span>
+        </div>
+        <p>Hybrid Classical-Quantum ML system for precise, early cancer detection.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Pipeline</h5>
+          <a href="#pipeline">Medical Images</a>
+          <a href="#pipeline">CNN Extraction</a>
+          <a href="#pipeline">Quantum Encoding</a>
+          <a href="#pipeline">Hybrid Fusion</a>
+        </div>
+        <div class="footer-col">
+          <h5>Models</h5>
+          <a href="#models">CNN (ResNet50)</a>
+          <a href="#models">VQC</a>
+          <a href="#models">QSVM</a>
+          <a href="#models">Hybrid Fusion</a>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="#results">Benchmark Results</a>
+          <a href="#about">Technology Stack</a>
+          <a href="#demo">Live Demo</a>
+          <a href="#about">Datasets</a>
+        </div>
+        <div class="footer-col">
+          <h5>Healthcare</h5>
+          <a href="#doctors">Doctor Network</a>
+          <a href="#doctors">Cancer Centres</a>
+          <a href="#doctors">Route Mapping</a>
+          <a href="#doctors">Emergency Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 QuantumMed — Hybrid Classical-Quantum Cancer Detection System</p>
+      <p class="footer-disclaimer">⚠ Research prototype. Not for clinical diagnosis without medical supervision.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
